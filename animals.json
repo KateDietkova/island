@@ -1,0 +1,19 @@
+{
+  "Wolf": { "type":"ANIMAL","isPredator":true,"weight":50,"minWeight":35,"maxCountPerCell":30,"speed":3,"foodNeed":8,"adultAge":3,"maxDaysWithoutFood":3 },
+  "Fox":  { "type":"ANIMAL","isPredator":true,"weight":8,"minWeight":5,"maxCountPerCell":30,"speed":2,"foodNeed":2,"adultAge":2,"maxDaysWithoutFood":3 },
+  "Boa":  { "type":"ANIMAL","isPredator":true,"weight":15,"minWeight":10,"maxCountPerCell":30,"speed":1,"foodNeed":3,"adultAge":3,"maxDaysWithoutFood":5 },
+  "Bear": { "type":"ANIMAL","isPredator":true,"weight":500,"minWeight":300,"maxCountPerCell":5,"speed":2,"foodNeed":80,"adultAge":5,"maxDaysWithoutFood":7 },
+  "Eagle":{ "type":"ANIMAL","isPredator":true,"weight":6,"minWeight":4,"maxCountPerCell":20,"speed":3,"foodNeed":1,"adultAge":2,"maxDaysWithoutFood":2 },
+  "Horse":{ "type":"ANIMAL","isHerbivore":true,"weight":400,"minWeight":260,"maxCountPerCell":20,"speed":4,"foodNeed":60,"adultAge":4,"maxDaysWithoutFood":4 },
+  "Deer": { "type":"ANIMAL","isHerbivore":true,"weight":300,"minWeight":195,"maxCountPerCell":20,"speed":4,"foodNeed":50,"adultAge":3,"maxDaysWithoutFood":4 },
+  "Rabbit":{"type":"ANIMAL","isHerbivore":true,"weight":2,"minWeight":1.2,"maxCountPerCell":150,"speed":2,"foodNeed":0.45,"adultAge":2,"maxDaysWithoutFood":2 },
+  "Mouse": { "type":"ANIMAL","isHerbivore":true,"weight":0.05,"minWeight":0.03,"maxCountPerCell":500,"speed":1,"foodNeed":0.01,"adultAge":1,"maxDaysWithoutFood":2 },
+  "Goat": { "type":"ANIMAL","isHerbivore":true,"weight":60,"minWeight":39,"maxCountPerCell":140,"speed":3,"foodNeed":10,"adultAge":3,"maxDaysWithoutFood":3 },
+  "Sheep":{ "type":"ANIMAL","isHerbivore":true,"weight":70,"minWeight":45,"maxCountPerCell":140,"speed":3,"foodNeed":15,"adultAge":3,"maxDaysWithoutFood":3 },
+  "Boar": { "type":"ANIMAL","isHerbivore":true,"weight":400,"minWeight":260,"maxCountPerCell":50,"speed":2,"foodNeed":50,"adultAge":4,"maxDaysWithoutFood":4 },
+  "Buffalo":{"type":"ANIMAL","isHerbivore":true,"weight":700,"minWeight":455,"maxCountPerCell":10,"speed":3,"foodNeed":100,"adultAge":5,"maxDaysWithoutFood":5 },
+  "Duck": { "type":"ANIMAL","isPredator":true,"isHerbivore":true,"weight":1,"minWeight":0.6,"maxCountPerCell":200,"speed":4,"foodNeed":0.15,"adultAge":2,"maxDaysWithoutFood":2 },
+  "Caterpillar":{"type":"ANIMAL","isHerbivore":true,"weight":0.01,"minWeight":0.006,"maxCountPerCell":1000,"speed":0,"foodNeed":0,"adultAge":1,"maxDaysWithoutFood":6 },
+
+  "Grass": { "type":"PLANT","weight":1,"maxCountPerCell":200 }
+}

@@ -1,0 +1,6 @@
+{
+  "Grass": {
+    "weight": 1.0,
+    "maxCountPerCell": 200
+  }
+}

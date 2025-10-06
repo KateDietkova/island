@@ -1,0 +1,22 @@
+{
+  "tactDurationMillis": 1000,
+  "stopCondition": "allAnimalsDead",
+  "maxTicks": 5,
+  "offspringCount": {
+    "Wolf": 2,
+    "Fox": 2,
+    "Boa": 1,
+    "Bear": 1,
+    "Eagle": 4,
+    "Horse": 2,
+    "Deer": 2,
+    "Rabbit": 5,
+    "Mouse": 2,
+    "Goat": 2,
+    "Sheep": 3,
+    "Boar": 3,
+    "Buffalo": 2,
+    "Duck": 5,
+    "Caterpillar": 3
+  }
+}

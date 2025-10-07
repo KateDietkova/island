@@ -18,6 +18,7 @@ public abstract class  Organism implements Reproducible, Cloneable {
     public void setCurrentCell(Cell cell) {
         this.currentCell = cell;
     }
+    public Cell getCurrentCell() { return currentCell; }
 
     public boolean isAlive() {
         return isAlive;
@@ -27,6 +28,10 @@ public abstract class  Organism implements Reproducible, Cloneable {
         isAlive = false;
 
         if (currentCell != null) {
+            try {
+                currentCell.getField().getStats().onDeath(this.name);
+            } catch (Exception ignored) {}
+
             currentCell.removeResident(this);
         }
     }

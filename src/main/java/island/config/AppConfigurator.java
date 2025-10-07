@@ -38,7 +38,6 @@ public class AppConfigurator {
     public void init() {
         loadConfigs("island.json", "animals.json", "plants.json", "simulation.json");
         loadFeedingProbabilities("feeding.json");
-        //registerPrototypes();
     }
 
     public void loadConfigs(String islandPath, String animalsPath, String plantsPath, String simulationPath) {
@@ -115,14 +114,4 @@ public class AppConfigurator {
     }
 
 
-    private void registerPrototypes() {
-        animalsConfig.keySet().forEach((key) -> {
-            organismPrototypeFactory.registerPrototype(animalsConfig.get(key), key);
-        });
-//        gameObjectsScanner.
-//                getAllGameObjectClasses()
-//                .forEach(clazz ->
-//                        organismPrototypeFactory.registerPrototype(clazz, clazz.getSimpleName())
-//                );
-    }
 }

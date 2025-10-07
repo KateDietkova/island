@@ -3,11 +3,10 @@ package island.entity.map;
 import island.entity.organism.Organism;
 import island.entity.organism.animal.Animal;
 import island.entity.organism.animal.Gender;
+import island.entity.organism.plant.Plant;
+import island.entity.organism.MoveIntent;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Cell {
 
@@ -28,9 +27,31 @@ public class Cell {
     public int getY() { return y; }
     public GameField getField() { return field; }
 
-    public Map<String, Set<Organism>> getResidents() {
-        return residents;
+    /** Phase 1 without move */
+    public void processEatAndReproduce() {
+        List<Organism> copy = new ArrayList<>(getAllResidents());
+        // random events in the cell
+        Collections.shuffle(copy, new Random());
+
+        for (Organism o : copy) {
+            if (!o.isAlive()) continue;
+            if (o instanceof Animal a) {
+                a.actInPlaceOneDay();      // without move
+            } else if (o instanceof Plant p) {
+                p.liveOneDay();
+            }
+        }
     }
+
+    /** Phase 2 just collect move intent */
+    public void computeMoveIntents(Queue<MoveIntent> out) {
+        for (Organism o : new ArrayList<>(getAllResidents())) {
+            if (!(o instanceof Animal a) || !a.isAlive()) continue;
+            MoveIntent intent = a.computeMoveIntent();
+            if (intent != null) out.add(intent);
+        }
+    }
+
 
     public Set<Organism> getAllResidents() {
         Set<Organism> all = new HashSet<>();
@@ -49,7 +70,6 @@ public class Cell {
     public void removeResident(Organism organism) {
         if (residents.containsKey(organism.getName())) {
             residents.get(organism.getName()).remove(organism);
-            //System.out.println("Removed. Current cell size - " + getAllResidents().size()) ;
             if (residents.get(organism.getName()).isEmpty()) {
                 residents.remove(organism.getName());
             }

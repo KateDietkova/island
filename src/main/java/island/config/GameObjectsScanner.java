@@ -24,26 +24,5 @@ public class GameObjectsScanner {
         return instance;
     }
 
-    public Set<Class<? extends Organism>> getAllGameObjectClasses() {
-        Reflections reflections = new Reflections("island.entity.organism");
-
-        return reflections.getSubTypesOf(Organism.class).stream()
-                // filter Interfaces and Abstract classes
-                .filter(c -> !c.isInterface())
-                .filter(c -> !Modifier.isAbstract(c.getModifiers()))
-                // filter Annotation
-                .filter(c -> !c.isSynthetic())
-                .collect(Collectors.toSet());
-    }
-
-    public Class<? extends Organism> getClassBySimpleName(String simpleName) {
-        return organismClasses
-                .stream()
-                .filter(clazz -> clazz.getSimpleName().equals(simpleName))
-                .findFirst()
-                .orElseThrow(() ->
-                        new IllegalArgumentException("Class not found for name: " + simpleName));
-    }
-
 
 }

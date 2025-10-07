@@ -29,25 +29,6 @@ public class OrganismPrototypeFactory {
         return instance;
     }
 
-    public void registerPrototype(Class<? extends Organism> clazz, String name) {
-        try {
-            if (Animal.class.isAssignableFrom(clazz)) {
-                Animal prototype = clazz.asSubclass(Animal.class)
-                        .getDeclaredConstructor()
-                        .newInstance();
-                prototypes.put(clazz, prototype);
-
-            } else if (Plant.class.isAssignableFrom(clazz)) {
-                Plant prototype = clazz.asSubclass(Plant.class)
-                        .getDeclaredConstructor()
-                        .newInstance();
-                prototypes.put(clazz, prototype);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException("Cannot create prototype for " + clazz.getName(), e);
-        }
-    }
-
     public void registerPrototype(AnimalConfig animalConfig, String name) {
         try {
             switch (animalConfig.getType()) {

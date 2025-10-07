@@ -48,32 +48,4 @@ public class Herbivore extends Animal {
             changeWeight(-(foodNeed - eaten));
         }
     }
-//        if (!isAlive || currentCell == null) return;
-//
-//        double eaten = 0.0;
-//
-//        for (Organism o : new ArrayList<>(currentCell.getAllResidents())) {
-//            if (!(o instanceof Plant plant) || !plant.isAlive()) continue;
-//
-//            double need = foodNeed - eaten;
-//            if (need <= 0) break;
-//
-//            double bite = Math.min(plant.getCurrentWeight(), need);
-//            changeWeight(bite);
-//            plant.changeWeight(-bite);
-//            eaten += bite;
-//
-//            if (plant.getCurrentWeight() <= 0) {
-//                plant.die();
-//            }
-//        }
-//
-//        if (eaten >= foodNeed) {
-//            daysWithoutFood = 0;
-//        } else {
-//            daysWithoutFood++;
-//            //basic metabolism
-//            changeWeight(-(foodNeed - eaten));
-//        }
-//    }
 }

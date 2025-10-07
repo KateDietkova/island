@@ -51,6 +51,11 @@ public class Plant extends Organism {
         Plant offspring = (Plant) this.clone();
         offspring.setCurrentCell(currentCell);
         currentCell.addResident(offspring);
+
+        try {
+            currentCell.getField().getStats().onBirth(this.getName(), 1);
+        } catch (Exception ignored) {}
+
         return offspring;
     }
 
